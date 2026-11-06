@@ -1,0 +1,74 @@
+[
+  {
+    "exam_id": "wbpsc_sub_surveyor_2026",
+    "title": "WBPSC SUB-SURVEYOR RECRUITMENT 2026",
+    "palette": "Red & Navy (Classic Alert)",
+    "poster": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\poster_wbpsc_sub_surveyor_2026_palette_1_red_navy.jpg",
+    "video": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\short_wbpsc_sub_surveyor_2026_palette_1_red_navy.mp4",
+    "scheduled_time": "2026-10-31T19:46:26.645841+00:00",
+    "publish_results": {
+      "youtube": {
+        "status": "simulated",
+        "platform": "YouTube Shorts",
+        "video_id": "yt_sim_1793468792",
+        "url": "https://youtube.com/shorts/yt_sim_1793468792",
+        "scheduled_time": "2026-10-31T19:46:26.645841+00:00"
+      },
+      "facebook": {
+        "status": "simulated",
+        "platform": "Facebook Reels",
+        "video_id": "fb_reel_1793468792",
+        "url": "https://facebook.com/reel/fb_reel_1793468792",
+        "scheduled_time": "2026-10-31T19:46:26.645841+00:00"
+      }
+    }
+  },
+  {
+    "exam_id": "tnmvmd_apprentice_2026",
+    "title": "TNMVMD APPRENTICE RECRUITMENT 2026",
+    "palette": "Green & Maroon (Forest Alert)",
+    "poster": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\poster_tnmvmd_apprentice_2026_palette_2_green_maroon.jpg",
+    "video": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\short_tnmvmd_apprentice_2026_palette_2_green_maroon.mp4",
+    "scheduled_time": "2026-10-31T23:46:26.645841+00:00",
+    "publish_results": {
+      "youtube": {
+        "status": "simulated",
+        "platform": "YouTube Shorts",
+        "video_id": "yt_sim_1793468802",
+        "url": "https://youtube.com/shorts/yt_sim_1793468802",
+        "scheduled_time": "2026-10-31T23:46:26.645841+00:00"
+      },
+      "facebook": {
+        "status": "simulated",
+        "platform": "Facebook Reels",
+        "video_id": "fb_reel_1793468802",
+        "url": "https://facebook.com/reel/fb_reel_1793468802",
+        "scheduled_time": "2026-10-31T23:46:26.645841+00:00"
+      }
+    }
+  },
+  {
+    "exam_id": "nabfins_cso_2026",
+    "title": "NABFINS CSO RECRUITMENT 2026",
+    "palette": "Royal Blue & Orange (High Contrast)",
+    "poster": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\poster_nabfins_cso_2026_palette_3_royal_blue_orange.jpg",
+    "video": "C:\\Users\\vinay\\Downloads\\govt exam posts\\output\\short_nabfins_cso_2026_palette_3_royal_blue_orange.mp4",
+    "scheduled_time": "2026-11-01T03:46:26.645841+00:00",
+    "publish_results": {
+      "youtube": {
+        "status": "simulated",
+        "platform": "YouTube Shorts",
+        "video_id": "yt_sim_1793468812",
+        "url": "https://youtube.com/shorts/yt_sim_1793468812",
+        "scheduled_time": "2026-11-01T03:46:26.645841+00:00"
+      },
+      "facebook": {
+        "status": "simulated",
+        "platform": "Facebook Reels",
+        "video_id": "fb_reel_1793468812",
+        "url": "https://facebook.com/reel/fb_reel_1793468812",
+        "scheduled_time": "2026-11-01T03:46:26.645841+00:00"
+      }
+    }
+  }
+]
