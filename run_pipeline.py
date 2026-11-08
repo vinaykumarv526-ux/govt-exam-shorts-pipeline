@@ -97,14 +97,17 @@ def run_pipeline(
     schedule: bool = False,
     dry_run: bool = True,
     interval_hours: float = 4.0,
+    platforms: List[str] = None,
 ):
     """
     Executes end-to-end automated pipeline:
     1. Scrapes or ingests exam alerts.
     2. Cycles through color palettes.
     3. Renders pixel-perfect 1080x1920 9:16 Shorts with -18dB audio.
-    4. Schedules to YouTube Shorts & Facebook Reels across N days.
+    4. Schedules to Facebook Reels (and optionally other platforms) across N days.
     """
+    if platforms is None:
+        platforms = ["facebook"]  # Facebook Reels only by default ("no youtube")
     # If multi-day scheduling requested, adjust total limit
     if days > 1:
         total_required = days * slots_per_day
@@ -175,6 +178,7 @@ def run_pipeline(
                 video_path=video_path,
                 exam_data=exam,
                 scheduled_dt=staggered_time,
+                platforms=tuple(platforms),
                 dry_run=dry_run,
             )
 
@@ -221,6 +225,7 @@ def main():
     parser.add_argument("--schedule", action="store_true", default=True, help="Schedule to YouTube Shorts & FB Reels")
     parser.add_argument("--live-publish", action="store_true", help="Disables dry-run and executes live API uploads")
     parser.add_argument("--interval-hours", type=float, default=4.0, help="Staggered hours fallback")
+    parser.add_argument("--platforms", nargs="+", choices=["facebook", "youtube"], default=["facebook"], help="Platforms to schedule (default: facebook only)")
 
     args = parser.parse_args()
 
@@ -235,6 +240,7 @@ def main():
         schedule=args.schedule,
         dry_run=not args.live_publish,
         interval_hours=args.interval_hours,
+        platforms=args.platforms,
     )
 
 

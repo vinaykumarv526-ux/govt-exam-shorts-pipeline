@@ -1,4 +1,4 @@
-name: 24/7 Autonomous Govt Exam Shorts Pipeline
+name: 24/7 Autonomous Govt Exam Shorts Pipeline (Facebook Reels)
 
 on:
   schedule:
@@ -65,21 +65,12 @@ jobs:
 
       - name: Setup Credentials & Environment
         env:
-          YOUTUBE_CLIENT_SECRETS_BASE64: ${{ secrets.YOUTUBE_CLIENT_SECRETS_BASE64 }}
-          YOUTUBE_TOKEN_BASE64: ${{ secrets.YOUTUBE_TOKEN_BASE64 }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
         run: |
-          if [ -n "$YOUTUBE_CLIENT_SECRETS_BASE64" ]; then
-            echo "$YOUTUBE_CLIENT_SECRETS_BASE64" | base64 -d > client_secrets.json
-            echo "client_secrets.json restored from secrets."
-          fi
-          if [ -n "$YOUTUBE_TOKEN_BASE64" ]; then
-            echo "$YOUTUBE_TOKEN_BASE64" | base64 -d > youtube_token.json
-            echo "youtube_token.json restored from secrets."
-          fi
+          echo "Meta Facebook credentials loaded."
 
-      - name: Execute Autonomous Shorts Pipeline (2 Days Schedule)
+      - name: Execute Autonomous Shorts Pipeline (Facebook Reels Only)
         env:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
@@ -89,12 +80,12 @@ jobs:
           DURATION="${{ github.event.inputs.duration || '15.0' }}"
           LIVE="${{ github.event.inputs.live_publish || 'true' }}"
 
-          EXTRA_ARGS=""
-          if [ "$LIVE" = "true" ] || [ -n "$META_PAGE_ACCESS_TOKEN" ] || [ -f "youtube_token.json" ]; then
-            EXTRA_ARGS="--live-publish"
+          EXTRA_ARGS="--platforms facebook"
+          if [ "$LIVE" = "true" ] || [ -n "$META_PAGE_ACCESS_TOKEN" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --live-publish"
           fi
 
-          echo "Running autonomous pipeline in cloud for $DAYS day(s) with $SLOTS slot(s)/day..."
+          echo "Running autonomous pipeline (Facebook Reels Only) for $DAYS day(s) with $SLOTS slot(s)/day..."
           python run_pipeline.py --days $DAYS --slots-per-day $SLOTS --duration $DURATION $EXTRA_ARGS
 
       - name: Upload Generated Videos & Posters Artifacts
